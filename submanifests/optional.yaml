@@ -71,4 +71,9 @@ manifest:
       remote: upstream
       groups:
         - optional
+    - name: no-os
+      url: https://github.com/analogdevicesinc/no-OS.git
+      revision: zephyr_i2c
+      path: modules/lib/no-os
+      
 # zephyr-keep-sorted-stop
