@@ -19,6 +19,13 @@
 #define AD4170_ADC_AIN6            6
 #define AD4170_ADC_AIN7            7
 #define AD4170_ADC_AIN8            8
+#define AD4170_ADC_AIN9            9
+#define AD4170_ADC_AIN10           10
+#define AD4170_ADC_AIN11           11
+#define AD4170_ADC_AIN12           12
+#define AD4170_ADC_AIN13           13
+#define AD4170_ADC_AIN14           14
+#define AD4170_ADC_AIN15           15
 #define AD4170_ADC_TEMP_SENSOR     17
 #define AD4130_ADC_AVDD_AVSS_DIV5  18
 #define AD4130_ADC_IOVDD_DGND_DIV5 19
