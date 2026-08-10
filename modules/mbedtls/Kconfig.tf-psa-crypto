@@ -20,7 +20,14 @@ config TF_PSA_CRYPTO_USER_CONFIG
 
 config MBEDTLS_ECP_NIST_OPTIM
 	bool "NIST curves optimization"
+	default y
 	depends on PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_BASIC
+	help
+	  Enable specific 'modulo p' routines for each NIST prime. Depending on the
+	  prime and architecture, makes operations 4 to 8 times faster on the
+	  corresponding curve.
+
+	  The cost is a small amount of flash for the reduction tables.
 
 comment "Supported ciphers and cipher modes"
 
@@ -206,7 +213,9 @@ config MBEDTLS_PEM_WRITE_C
 
 config MBEDTLS_HAVE_ASM
 	bool "Use of assembly code"
-	default y if !ARM
+	# Enabled by default on ARMv7-M and ARMv8-M mainline cores because it brings performance improvement and footprint reduction.
+	# Disabled on other ARM architectures (e.g., ARMv6-M) because the footprint increases.
+	default y if !ARM || ARMV7_M_ARMV8_M_MAINLINE
 	help
 	  Enable use of assembly code in Mbed TLS. This improves the performance
 	  of asymmetric cryptography, however this might have an impact on the

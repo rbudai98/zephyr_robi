@@ -35,7 +35,7 @@
 #include <zephyr/sys/slist.h>
 #include <zephyr/sys/util.h>
 #include <zephyr/sys/util_macro.h>
-#include <zephyr/sys_clock.h>
+#include <zephyr/sys/clock.h>
 #include <zephyr/toolchain.h>
 
 #if defined(CONFIG_BT_GATT_CACHING)
@@ -51,7 +51,7 @@
 #include "gatt_internal.h"
 #include "hci_core.h"
 #include "keys.h"
-#include "long_wq.h"
+#include "common/long_wq.h"
 #include "l2cap_internal.h"
 #include "settings.h"
 #include "smp.h"
